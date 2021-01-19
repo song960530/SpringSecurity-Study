@@ -23,11 +23,25 @@ public class SecurityController {
 
   @GetMapping("/admin/pay")
   public String adminPay() {
+
     return "admin/pay";
   }
 
-  @GetMapping("/admin")
+  @GetMapping("/admin/**")
   public String admin() {
+
     return "admin";
   }
+
+  @GetMapping("/denied")
+  public String denied() {
+    return "Access is denied";
+  }
+
+  @GetMapping("/login")
+  public String login() {
+    return "login";
+  }
+
+
 }

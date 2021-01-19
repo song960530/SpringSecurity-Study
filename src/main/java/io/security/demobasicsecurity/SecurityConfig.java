@@ -15,7 +15,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -35,6 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http.authorizeRequests()
+        .antMatchers("/login").permitAll()
         .antMatchers("/user").hasRole("USER")
         .antMatchers("/admin/pay").hasRole("ADMIN")
         .antMatchers("/admin/**").access("hasRole('ADMIN') or hasRole('SYS')")
@@ -111,20 +111,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     ;
 
     http.exceptionHandling()
-        .authenticationEntryPoint(new AuthenticationEntryPoint() {
-          @Override
-          public void commence(HttpServletRequest httpServletRequest,
-              HttpServletResponse httpServletResponse, AuthenticationException e)
-              throws IOException, ServletException {
-            httpServletResponse.sendRedirect("/login");
-          }
-        })
+//        .authenticationEntryPoint(new AuthenticationEntryPoint() {
+//          @Override
+//          public void commence(HttpServletRequest httpServletRequest,
+//              HttpServletResponse httpServletResponse, AuthenticationException e)
+//              throws IOException, ServletException {
+//            httpServletResponse.sendRedirect("/login");
+//          }
+//        })
         .accessDeniedHandler(new AccessDeniedHandler() {
           @Override
           public void handle(HttpServletRequest httpServletRequest,
               HttpServletResponse httpServletResponse, AccessDeniedException e)
               throws IOException, ServletException {
-            httpServletResponse.sendRedirect("/denined");
+            httpServletResponse.sendRedirect("/denied");
           }
         })
     ;
