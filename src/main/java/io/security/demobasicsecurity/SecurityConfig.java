@@ -29,6 +29,7 @@ import org.springframework.security.web.savedrequest.SavedRequest;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+  // 깃 테스트
   @Autowired
   UserDetailsService userDetailsService;
 
