@@ -8,7 +8,7 @@ public class Note
 {
 
     // 필터 초기화 및 다중 보안 설정 하는 방법
-    io.security.demobasicsecurity.필터초기화및다중보안설정.SecurityConfig8 SecurityConfig8 = new SecurityConfig8();
+    SecurityConfig8 SecurityConfig8 = new SecurityConfig8();
 
     // 사용자의 인증 정보를 저장하는 토큰 개념 (Authentication)
     SecurityConfig9 SecurityConfig9 = new SecurityConfig9();
