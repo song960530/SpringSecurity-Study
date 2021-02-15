@@ -1,8 +1,6 @@
 package io.security.demobasicsecurity.인증개념이해_Authentication;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 /**
@@ -19,15 +17,17 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  *
  * 각 구조에 해당 정보를 담은 뒤 SecurityContext 인증 객체에 담김(전역에서 사용)
  */
-//@Configuration
-//@EnableWebSecurity
+// @Configuration
+// @EnableWebSecurity
 public class SecurityConfig9 extends WebSecurityConfigurerAdapter
 {
+
     @Override
     protected void configure(HttpSecurity http) throws Exception
     {
         http.authorizeRequests()
-            .anyRequest().authenticated()
+            .anyRequest()
+            .authenticated()
             .and()
             .formLogin();
     }

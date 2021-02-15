@@ -8,6 +8,9 @@ public class SecurityController11
 {
 
     @GetMapping("/")
-    public String index() { return "home"; }
+    public String index()
+    {
+        return "home";
+    }
 
 }

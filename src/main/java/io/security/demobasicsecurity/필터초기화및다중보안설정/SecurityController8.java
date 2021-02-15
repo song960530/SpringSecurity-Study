@@ -2,12 +2,15 @@ package io.security.demobasicsecurity.필터초기화및다중보안설정;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
-//@RestController
+// @RestController
 public class SecurityController8
 {
 
     @GetMapping("/")
-    public String index() { return "home"; }
+    public String index()
+    {
+        return "home";
+    }
 
 
 
