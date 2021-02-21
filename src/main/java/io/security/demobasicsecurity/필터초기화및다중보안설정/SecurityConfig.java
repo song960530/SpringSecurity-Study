@@ -19,7 +19,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 // @Configuration
 // @EnableWebSecurity
 // @Order(0)
-public class SecurityConfig8 extends WebSecurityConfigurerAdapter
+public class SecurityConfig extends WebSecurityConfigurerAdapter
 {
 
     @Override
@@ -36,7 +36,7 @@ public class SecurityConfig8 extends WebSecurityConfigurerAdapter
 
 // @Configuration
 // @Order(1)
-class SecurityConfig8_1 extends WebSecurityConfigurerAdapter
+class SecurityConfig_1 extends WebSecurityConfigurerAdapter
 {
 
     @Override
